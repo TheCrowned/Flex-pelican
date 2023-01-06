@@ -44,9 +44,10 @@ body {
   padding: 0;
   background-color: @body-bg;
   color: @text-color;
-  font-family: @sans;
-  font-size: 1.02em;
-  line-height: 1.2em;
+  font-family: @system;
+  font-size: 1.1em;
+  line-height: 1.6em;
+  /*max-width: 1400px;*/
 }
 
 a {
@@ -109,15 +110,18 @@ aside {
         display: inline;
         line-height: 1.6em;
         font-size: 1.28em;
-        text-transform: lowercase;
+        /*text-transform: lowercase;*/
       }
     }
   }
 }
 
 main {
+  margin-left: 5%;
+  margin-right: 5%;
+  
   nav {
-    text-align: center;
+    text-align: right;
     text-transform: uppercase;
     padding: 14px 0 14px 0;
     border-bottom: @nav-border-color 1px solid;
@@ -156,7 +160,16 @@ main {
   }
 
   article {
-    margin: 0 8% 2% 8%;
+
+    &.single {
+      /*margin: 0 8% 2% 8%;*/
+      img {
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+    }
 
     header {
       h1, h2 {
@@ -528,6 +541,10 @@ ul.social {
   a.sc-lastfm {
     background-color: @lastfm-bg-color;
   }
+
+  a.sc-goodreads {
+    background-color: @goodreads-bg-color;
+  }
 }
 
 .ads-aside {
@@ -550,7 +567,7 @@ ul.social {
 
 @media screen and (min-width: 768px) {
   aside {
-    width: 25vw;
+    width: 330px;
     height: 100vh;
     position: fixed;
     z-index: 1000;
@@ -578,15 +595,25 @@ ul.social {
   main {
     height: 100vh;
     position: relative;
-    padding-left: 25vw;
+    padding-left: 330px;
 
     article {
-      max-width: 760px;
-
       ul.list {
         li {
           padding: 2px;
         }
+      }
+    }
+
+    .index-container {
+      flex-direction: row;
+      display: flex;
+      flex-wrap: wrap;
+      
+      article {
+        width: max(23%, 380px);
+        margin-right: 30px;
+        margin-bottom: 20px;
       }
     }
   }
