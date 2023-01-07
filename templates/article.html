@@ -15,7 +15,7 @@
 {% include "partial/og_article.html" %}
 {% endblock %}
 
-{% block title %} &ndash; {{ article.title|striptags|escape }}{% endblock %}
+{% block title %}{{ article.title|striptags|escape }} &ndash; {% endblock %}
 
 {% block content %}
 <article class="single">
